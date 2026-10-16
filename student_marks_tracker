@@ -1,0 +1,39 @@
+//Student Marks Tracker
+#include <iostream>
+
+int main() {
+    // Declare an array to store marks of 5 students
+    int marks[5];
+    int total = 0;
+
+    std::cout << "--- Class Marks Tracker ---" << std::endl;
+
+    // 1. Input: Store marks into the array using a loop
+    for (int i = 0; i < 5; ++i) {
+        std::cout << "Enter marks for student " << (i + 1) << ": ";
+        std::cin >> marks[i];
+        total += marks[i]; // Add up marks for the average later
+    }
+
+    // 2. Logic: Find highest and lowest marks in the array
+    int highest = marks[0];
+    int lowest = marks[0];
+
+    for (int i = 1; i < 5; ++i) {
+        if (marks[i] > highest) {
+            highest = marks[i]; // Update highest
+        }
+        if (marks[i] < lowest) {
+            lowest = marks[i];  // Update lowest
+        }
+    }
+
+    // 3. Output: Calculate average and display results
+    double average = total / 5.0;
+    std::cout << "\n--- Performance Summary ---" << std::endl;
+    std::cout << "Average Class Score: " << average << std::endl;
+    std::cout << "Highest Marks: " << highest << std::endl;
+    std::cout << "Lowest Marks: " << lowest << std::endl;
+
+    return 0;
+}
